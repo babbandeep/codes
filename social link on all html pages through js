@@ -1,0 +1,3 @@
+$(window).load(function(){
+  $('<div class="social"><a href="#"><img src="#" alt="fb" ></a></div>').insertAfter($("ul#menu-footer_menu"));
+});
