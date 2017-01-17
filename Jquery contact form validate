@@ -1,0 +1,22 @@
+<script type="text/javascript">
+//<![CDATA[
+$('#ContactForm').submit(function() {
+var email_address = $('#contact_email').val();
+
+if(email_address.indexOf('@') == -1 || email_address.indexOf('.') == -1) {
+alert('please enter a valid email');
+$('#contact_email').focus();
+$('#contact_email').select();
+return false;
+}
+
+if($('#contact_question').val() == '') {
+alert('please enter the question');
+$('#contact_question').focus();
+return false;
+}
+
+return true;
+});
+//]]>
+</script>
