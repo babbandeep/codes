@@ -1,0 +1,7 @@
+<script type="text/javascript">
+var url = "http://www.flytography.com.au/index.html";
+var currenturl = window.location
+if(url == currenturl) {
+window.location.href = "http://www.flytography.com.au";
+}
+</script>
