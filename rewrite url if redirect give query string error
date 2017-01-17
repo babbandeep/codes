@@ -1,0 +1,6 @@
+From
+http://www.edusentials.co.uk/mats-carpets/classroom-carpets/cat_535.html
+To
+http://www.edusentials.co.uk/mats-carpets/classroom-carpets/cat_534.html
+
+RewriteRule ^mats-carpets/classroom-carpets/cat_535.html$ /mats-carpets/classroom-carpets/cat_534.html [R=301,L]
