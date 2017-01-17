@@ -1,0 +1,9 @@
+echo("<script>location.href = 'http://www.alldrycarpetcleaningterrigal.com.au/thankyou.php';</script>");
+
+Or
+
+echo "<script>window.location.href='#';</script>";
+
+Or
+
+Echo "<script>window.location='#';</script>";
