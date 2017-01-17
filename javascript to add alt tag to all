@@ -1,0 +1,25 @@
+<script>
+
+var imgtag = document.getElementsByTagName("img");
+var len = imgtag.length;
+var i;
+for ( i = 0; i < len; i++ ){
+  imgtag[i].setAttribute("alt","1300trashit");
+}
+
+</script>
+
+also try to make if statement for if alt tag is empty.
+
+<script>
+
+var altop = new Array();
+var imgtag = document.getElementsByTagName("img");
+var len = imgtag.length;
+var i;
+for ( i = 0; i < len; i++ ){
+  altop.push(imgtag[i].getAttributeNode("alt").value);
+}
+  document.write(altop);
+
+</script>
