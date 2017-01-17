@@ -1,0 +1,4 @@
+<?php $imageID = get_field('THIS IS YOUR FIELD NAME FOR THE IMAGE'); ?>
+<?php $image = wp_get_attachment_image_src( $imageID, 'full' ); ?>
+<?php $alt_text = get_post_meta($imageID , '_wp_attachment_image_alt', true); ?>
+<img src="<?php echo $image[0]; ?>" alt="<?php echo $alt_text; ?>" />
