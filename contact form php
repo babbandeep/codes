@@ -1,0 +1,20 @@
+<?php
+$name = $_POST['name'];
+$email = $_POST['email'];
+$phone = $_POST['phone'];
+$message = $_POST['message'];
+$from = 'From: Imageandlight';
+$to = 'andrew@imageandlight.com.au';
+$subject = 'Imageandlight';
+
+$body = "From: $name\n E-Mail: $email\n Message:\n $message";
+
+if($_POST['submit']){
+if(mail ($to, $submit, $body, $from)) {
+echo '<script>window.location.href="http://www.imageandlight.com.au/thankyou.htm";</script>';
+} else {
+echo '<p>Something went wrong, go back and try again!</p>';
+}
+}
+
+?>
