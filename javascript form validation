@@ -1,0 +1,26 @@
+(also use field empty error with this to make it work well)
+
+add onsubmit inside form tag
+
+ <form id="myform" onsubmit="return checknum(this);" method="post" action="">
+
+phone no validation code
+
+<script>
+  function checknum(form)
+  {
+  var form_mail = document.forms["FORM_ID"]["INPUT_ID"].value;
+
+Check = /^[0-9]+$/;
+  if(!form_mail.match(Check)) {
+document.forms["widgetu780"]["widgetu5885_input"].value = ' ';
+  alert("Error: must be a number ");
+  return false;
+  }
+
+  }
+ </script>
+
+for more validation code
+
+http://hepspace.com/web/validation/
