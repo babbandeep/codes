@@ -1,0 +1,7 @@
+<?php
+
+if( ! (is_home() || is_front_page()) ) : ?>
+
+     <h1>html will go here</h1>
+
+<?php  endif;   ?>
