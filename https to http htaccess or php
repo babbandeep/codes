@@ -1,0 +1,34 @@
+htaccess
+
+RewriteCond %{HTTPS} on
+RewriteRule (.*) http://%{HTTP_HOST}%{REQUEST_URI} [R=301,L]
+
+php
+
+/**
+ * Redirect WordPress front end https URLs to http
+ *
+ * Necessary when running forced SSL in admin and you don't want links to the front end to remain https.
+ */
+
+add_action( 'template_redirect', 'bhww_ssl_template_redirect', 1 );
+
+function bhww_ssl_template_redirect() {
+
+if ( is_ssl() && ! is_admin() ) {
+
+if ( 0 === strpos( $_SERVER['REQUEST_URI'], 'http' ) ) {
+
+wp_redirect( preg_replace( '|^https://|', 'http://', $_SERVER['REQUEST_URI'] ), 301 );
+exit();
+
+} else {
+
+wp_redirect( 'http://' . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'], 301 );
+exit();
+
+}
+
+}
+
+}
