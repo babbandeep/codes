@@ -1,0 +1,9 @@
+in: "templates/system" folder there is a file called error.php
+
+defined( '_JEXEC' ) or die( 'Restricted access' );
+
+// add this code
+if ($this->error->code == 404){
+   header( 'Location: http://www.yourdomain.com' ) ;
+   exit();
+}
