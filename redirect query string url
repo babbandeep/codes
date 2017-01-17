@@ -1,0 +1,12 @@
+http://windowcleaningonline.com.au/washers?p=3 to https://windowcleaningonline.com.au/product-category/washers/
+
+RewriteCond %{HTTP_HOST} ^windowcleaningonline\.com\.au$ [NC]
+RewriteCond %{QUERY_STRING} ^p=3(&.*)?$ [NC]
+RewriteRule ^washers$ https://windowcleaningonline.com.au/product-category/washers/?%1 [R=301,NE,NC,L]
+
+http://www.iselectvending.com.au/?page_id=82   to   http://www.iselectvending.com.au/about-us/
+
+using RewriteBase /  (try  RewriteRule ^/$ /about-us/? [L,R=301]) if without  RewriteBase /
+
+RewriteCond %{QUERY_STRING} page_id=82
+RewriteRule ^$ /about-us/? [L,R=301]
