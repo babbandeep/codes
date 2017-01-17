@@ -1,0 +1,41 @@
+.htaccess string url changing
+from this url (http://www.trubludogwash.com.au/?seotitle=home)
+to this url (http://www.trubludogwash.com.au/)
+
+RewriteCond %{QUERY_STRING} !^$
+RewriteRule .* http://www.trubludogwash.com.au%{REQUEST_URI}? [R=301,L]
+
+Redirect index.php or index.html to root:
+
+1. RewriteRule ^(.*)index\.(php|html?)$ /$1 [R=301,NC,L]
+2. RewriteRule ^(.*)index\.php?$ /$1 [R=301,NC,L]
+
+Joomla index.php remove from home url.
+
+this will remove index.php from only home url without effecting other pages
+
+RewriteCond %{THE_REQUEST} ^.*\/index\.php?\ HTTP/
+
+RewriteRule ^(.*)index\.php?$ "/$1" [R=301,L,QSA]
+
+or try these .htaccess codes:
+
+- RewriteCond %{THE_REQUEST} ^.*/index.php
+RewriteRule ^index\.php$ / [R=301,L]
+
+- RewriteCond %{HTTP_HOST} ^(darius.photography)$ [NC]
+RewriteRule ^(.*)$ http://www.%1/$1 [R=301,L]
+
+RewriteEngine On
+RewriteBase /
+
+#remove /index.php from home url and redirect to root.
+#http://mysite.local/index.php -> http://mysite.local/
+
+RewriteCond %{THE_REQUEST} ^.*\/index\.php?\ HTTP/
+RewriteRule ^(.*)index\.php?$ "/$1" [R=301,L,QSA]
+
+#pretty url without index.php
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule .* index.php [PT,QSA,L]
