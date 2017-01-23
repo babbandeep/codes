@@ -1,0 +1,1 @@
+on_sent_ok: "location.replace('http://www.justbadges.com.au/thank-you/');"
